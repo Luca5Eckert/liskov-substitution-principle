@@ -1,9 +1,10 @@
-package com.liskov.substitution.principle.model;
+package com.liskov.substitution.principle.model.pedido;
 
 public class Pedido {
 
     protected double valorBruto;
     protected double valorFinal;
+    protected TipoPedido tipoPedido;
 
     public Pedido(double valorBruto) {
         this.valorBruto = valorBruto;
@@ -26,4 +27,11 @@ public class Pedido {
         this.valorFinal = valorFinal;
     }
 
+    public TipoPedido getTipoPedido() {
+        return tipoPedido;
+    }
+
+    public void setTipoPedido(TipoPedido tipoPedido) {
+        this.tipoPedido = tipoPedido;
+    }
 }
