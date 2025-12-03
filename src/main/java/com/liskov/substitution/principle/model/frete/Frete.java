@@ -4,6 +4,6 @@ import com.liskov.substitution.principle.model.pedido.Pedido;
 
 public interface Frete {
 
-    void aplicar(Pedido pedido);
+    double aplicar(double valorBruto);
 
 }

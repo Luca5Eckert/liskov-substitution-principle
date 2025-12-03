@@ -1,5 +1,7 @@
 package com.liskov.substitution.principle.model.pedido;
 
+import com.liskov.substitution.principle.model.frete.Frete;
+
 public class Pedido {
 
     protected double valorBruto;
@@ -10,6 +12,12 @@ public class Pedido {
         this.valorBruto = valorBruto;
         this.valorFinal = valorBruto;
     }
+
+    public void aplicarFrete(){
+        Frete frete = getTipoPedido().getFrete();
+        this.valorFinal = frete.aplicar(this.valorBruto);
+    }
+
 
     public double getValorBruto() {
         return valorBruto;
@@ -24,6 +32,9 @@ public class Pedido {
     }
 
     public void setValorFinal(double valorFinal) {
+        if (valorFinal < 0) {
+            throw new IllegalArgumentException("Valor final não pode ser negativo");
+        }
         this.valorFinal = valorFinal;
     }
 

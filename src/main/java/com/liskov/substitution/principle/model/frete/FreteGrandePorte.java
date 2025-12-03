@@ -5,10 +5,8 @@ import com.liskov.substitution.principle.model.pedido.Pedido;
 public class FreteGrandePorte implements Frete {
 
     @Override
-    public void aplicar(Pedido pedido) {
-        pedido.setValorFinal(
-                pedido.getValorBruto() + 200
-        );
+    public double aplicar(double valorBruto) {
+        return valorBruto + 200;
     }
 
 }
